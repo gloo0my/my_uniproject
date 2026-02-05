@@ -1,0 +1,223 @@
+body {
+    background-color: #f9f4e6;
+}
+
+
+
+h1 {
+    font-size: 50px;
+    position: absolute; /* чтобы заголовок был поверх */
+    top: 15px;
+    left: 80px;
+    z-index: 10;
+    color: #304c65;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+p {
+    font-size: 60px;
+    position: absolute; /* чтобы заголовок был поверх */
+    top: 200px;
+    left: 80px;
+    right: 300px;
+    z-index: 10;
+    color: #f9f4e6;
+    font-family: 'Poppins', sans-serif;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+}
+
+
+
+.block {
+    height: 80px;
+    background-color: #f9f4e6;
+}
+
+.block2 {
+    height: 400px;
+    background-color: #a3bcdc;
+}
+
+.button-wrapper {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+}
+
+/* Кнопка */
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    --primary-color: #304c65;
+    --secondary-color: #000000;
+    --hover-color: #dcdcf2;
+    --arrow-width: 10px;
+    --arrow-stroke: 2px;
+    box-shadow: 0 0 30px 5px rgba(163, 188, 220, 1);
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 50px;
+    color: var(--secondary-color);
+    padding: 1em 1.8em;
+    background: var(--primary-color);
+    display: flex;
+    transition: 0.2s background;
+    align-items: center;
+    gap: 0.6em;
+    font-weight: bold;
+    position: absolute;
+
+    white-space: nowrap;
+    min-width: 140px;
+    justify-content: center;
+}
+
+.signup-button {
+    right: 150px;
+}
+
+.login-button {
+    right: 0;
+}
+
+button .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button .arrow {
+    margin-top: 1px;
+    width: var(--arrow-width);
+    background: var(--primary-color);
+    height: var(--arrow-stroke);
+    position: relative;
+    transition: 0.2s;
+}
+
+button .arrow::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    border: solid var(--secondary-color);
+    border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+    display: inline-block;
+    top: -3px;
+    right: 3px;
+    transition: 0.2s;
+    padding: 3px;
+    transform: rotate(-45deg);
+}
+
+button:hover {
+    background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+    background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+    right: 0;
+}
+
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    height: 100%;
+}
+
+.hero-section {
+    display: flex;
+    min-height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    justify-content: center;
+}
+
+.card{
+    margin-bottom: 400px;
+    position: relative;
+    list-style: none;
+    width: 220px;
+    transition: .3s ease;
+}
+
+.card::before {
+    content: "";
+    display:block;
+    padding-bottom: 150%;
+    width: 100%;
+}
+
+.card-background{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    border-radius: 20px;
+    background-size: 350px;
+    background-position: center;
+    filter: brightness(.9) saturate(1) contrast(1);
+    transform-orgin: bottom;
+    transform: scale(1) translateZ(0);
+    transition: .3s ease;
+}
+
+.card:hover .card-background{
+    transform: scale(1.15) translateZ(0);
+    background-size: 260px;
+}
+.card-container:hover .card:not(:hover){
+    transform: scale(.9);
+}
+
+.card-container:hover > .card:not(:hover) .card-background,
+.card-container:hover > .card:not(:hover) .card-category {
+    filter: brightness(.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.content {
+    top:50%;
+    left: 0;
+    padding: 25px;
+    position: absolute;
+}
+
+.card-category{
+    color:#f9f4e6;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 5px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.card-heading {
+    color: #f9f4e6;
+    font-size: 25px;
+    line-height: 1;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+}
